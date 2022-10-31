@@ -7,37 +7,7 @@
 </div>
 
 ## Acerca del Proyecto
-El proyecto propuesto consiste en implementar un total de 20 movimientos del robot y una interfaz web basada en Python Flask que permita al usuario controlar el robot Otto DIY mediante botones, la comunicación entre ambas partes del proyecto, software y hardware, se implementará simultáneamente con dos mecanismos de comunicación similares (Eclipse Mosquitto y Kafka).
-El Robot Otto esta conformado por 4 motores servo y un microcontrolador NodeMCU con integrado ESP8266. 
+El proyecto propuesto consiste en implementar una interfaz web basada en Python Flask que permita al usuario controlar el robot Otto DIY mediante botones, esto involucra el desarrollo de software y hardware relacionado al movimiento del robot, pero además necesita de la implementación de un mecanismo efectivo de comunicación
+entre ambas soluciones (interfaz-robot). Haciendo énfasis en éste último punto, se decidió para este proyecto implementar una comunicación bajo el protocolo MQTT utilizando el broker Mosquitto, explorando las capacidades de securización del mismo y midiendo el tiempo de respuesta que presenta al funcionar en conjunto con el broker Kafka.
 
-## Movimientos 
-* Walk (forward, backward, right, left) 
-* Turn right
-* Turn left
-* Bend
-* Shake leg
-* Moonwalker
-* Crusaito
-* Flapping
-* Swing
-* Tiptoe swing
-* Up Down
-* Happy
-* Sad
-* Victory
-* Sleeping
-* Confused
-* Fart
-* Fail
-* Follow mode
-* Retrieve mode
-* Avoid obstacles
-
-
-[O## Licencia
-Distribuido bajo GPL v3.0 License.
-
-<!-- PROJECT SHIELDS 
-[![Issues][issues-shield]][issues-url]
-[![GPL3 License][license-shield]][license-url]  -->
-
+El Robot Otto DIY consta de 4 motores servo y un microcontrolador NodeMCU v0.9 con integrado ESP8266.
