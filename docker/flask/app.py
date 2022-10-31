@@ -7,8 +7,7 @@ redis = Redis(host='redis', port=6379)
 
 @app.route('/')
 def hello():
-    redis.incr('hits')
-    return 'This Compose/Flask demo has been viewed %s time(s).' % redis.get('hits')
+    return"<p>Hello, maite!</p>"
 
 
 if __name__ == "__main__":

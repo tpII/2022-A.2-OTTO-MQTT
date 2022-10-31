@@ -1,0 +1,6 @@
+1667250277: mosquitto version 2.0.15 starting
+1667250277: Config loaded from /mosquitto/config/mosquitto.conf.
+1667250277: Opening ipv4 listen socket on port 1883.
+1667250277: mosquitto version 2.0.15 running
+1667250306: mosquitto version 2.0.15 terminating
+1667250306: Saving in-memory database to /mosquitto/data//mosquitto.db.
