@@ -1,4 +1,4 @@
-<div align="center">
+q<div align="center">
 
   <h1 align="center">A.2 - OTTO-MQTT</h1>
 
@@ -14,3 +14,7 @@ El Robot Otto DIY consta de 4 motores servo y un microcontrolador NodeMCU v0.9 c
 
 ## Bitácora del proyecto
 La bitácora del proyecto se encuentra disponible en la [Wiki](https://github.com/tpII/2022-A.2-OTTO-MQTT/wiki/Bit%C3%A1cora)
+
+## Instrucciones
+* Construir la imagen de flask desde el directorio docker/flask con el comando `docker build -t compose-flask .`
+* Ejecutar `docker-compose up -d` desde el directorio Docker para levantar el broker mosquitto, el servidor flask y el broker kafka
