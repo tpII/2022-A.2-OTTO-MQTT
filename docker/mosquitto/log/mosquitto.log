@@ -121,3 +121,153 @@
 1668465785: Client Carlos disconnected, not authorised.
 1668465797: mosquitto version 2.0.15 terminating
 1668465797: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1668469923: mosquitto version 2.0.15 starting
+1668469923: Config loaded from /mosquitto/config/mosquitto.conf.
+1668469923: Opening ipv4 listen socket on port 1883.
+1668469923: mosquitto version 2.0.15 running
+1668469924: New connection from 172.18.0.1:46558 on port 1883.
+1668469924: New client connected from 172.18.0.1:46558 as Carlos (p2, c0, k1200, u'Flask').
+1668469925: New connection from 172.18.0.1:46560 on port 1883.
+1668469925: Client Carlos disconnected, not authorised.
+1668469927: New connection from 172.18.0.1:46562 on port 1883.
+1668469927: Client Carlos disconnected, not authorised.
+1668469931: New connection from 172.18.0.1:46564 on port 1883.
+1668469931: Client Carlos disconnected, not authorised.
+1668469939: New connection from 172.18.0.1:46566 on port 1883.
+1668469939: Client Carlos disconnected, not authorised.
+1668469952: New connection from 127.0.0.1:46568 on port 1883.
+1668469952: New client connected from 127.0.0.1:46568 as auto-CAC45022-3870-24F6-82FD-86BAF8207ADE (p2, c1, k60, u'Otto').
+1668469955: New connection from 172.18.0.1:46570 on port 1883.
+1668469955: Client Carlos disconnected, not authorised.
+1668469962: New connection from 172.18.0.3:48521 on port 1883.
+1668469962: New client connected from 172.18.0.3:48521 as python-mqtt-{random.randint(0, 1000)} (p2, c1, k60, u'Flask').
+1668469962: New connection from 172.18.0.3:39815 on port 1883.
+1668469962: Client python-mqtt-{random.randint(0, 1000)} already connected, closing old connection.
+1668469962: New client connected from 172.18.0.3:39815 as python-mqtt-{random.randint(0, 1000)} (p2, c1, k60, u'Flask').
+1668469980: Client auto-CAC45022-3870-24F6-82FD-86BAF8207ADE disconnected.
+1668469998: New connection from 172.18.0.1:46572 on port 1883.
+1668469998: Client Carlos disconnected, not authorised.
+1668470008: New connection from 127.0.0.1:46574 on port 1883.
+1668470008: New client connected from 127.0.0.1:46574 as auto-07DB74C6-C5BE-BFB6-CB69-0472DF4815AB (p2, c1, k60, u'Otto').
+1668470041: New connection from 172.18.0.1:46602 on port 1883.
+1668470041: Client <unknown> disconnected due to malformed packet.
+1668470041: New connection from 172.18.0.1:46606 on port 1883.
+1668470042: Client <unknown> disconnected due to malformed packet.
+1668470042: New connection from 172.18.0.1:46610 on port 1883.
+1668470043: Client <unknown> disconnected due to malformed packet.
+1668470043: New connection from 172.18.0.1:46614 on port 1883.
+1668470043: Client <unknown> disconnected due to malformed packet.
+1668470055: Client python-mqtt-{random.randint(0, 1000)} has exceeded timeout, disconnecting.
+1668470077: New connection from 172.18.0.3:50583 on port 1883.
+1668470077: New client connected from 172.18.0.3:50583 as python-mqtt-{random.randint(0, 1000)} (p2, c1, k60, u'Flask').
+1668470090: Client python-mqtt-{random.randint(0, 1000)} closed its connection.
+1668470090: New connection from 172.18.0.3:42729 on port 1883.
+1668470090: New client connected from 172.18.0.3:42729 as python-mqtt-{random.randint(0, 1000)} (p2, c1, k60, u'Flask').
+1668470128: Client python-mqtt-{random.randint(0, 1000)} closed its connection.
+1668470128: New connection from 172.18.0.3:35955 on port 1883.
+1668470128: New client connected from 172.18.0.3:35955 as python-mqtt-{random.randint(0, 1000)} (p2, c1, k60, u'Flask').
+1668470159: Client python-mqtt-{random.randint(0, 1000)} closed its connection.
+1668470159: New connection from 172.18.0.3:58495 on port 1883.
+1668470159: New client connected from 172.18.0.3:58495 as python-mqtt-{random.randint(0, 1000)} (p2, c1, k60, u'Flask').
+1668470176: Client python-mqtt-{random.randint(0, 1000)} closed its connection.
+1668470177: New connection from 172.18.0.3:58683 on port 1883.
+1668470177: New client connected from 172.18.0.3:58683 as python-mqtt-{random.randint(0, 1000)} (p2, c1, k60, u'Flask').
+1668470177: New connection from 172.18.0.3:51113 on port 1883.
+1668470177: Client python-mqtt-{random.randint(0, 1000)} already connected, closing old connection.
+1668470177: New client connected from 172.18.0.3:51113 as python-mqtt-{random.randint(0, 1000)} (p2, c1, k60, u'Flask').
+1668470199: New connection from 172.18.0.1:46668 on port 1883.
+1668470199: Client Carlos disconnected, not authorised.
+1668470271: Client python-mqtt-{random.randint(0, 1000)} has exceeded timeout, disconnecting.
+1668470327: New connection from 172.18.0.1:46670 on port 1883.
+1668470327: Client Carlos disconnected, not authorised.
+1668470438: mosquitto version 2.0.15 terminating
+1668470438: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1668470492: mosquitto version 2.0.15 starting
+1668470492: Config loaded from /mosquitto/config/mosquitto.conf.
+1668470492: Opening ipv4 listen socket on port 1883.
+1668470492: mosquitto version 2.0.15 running
+1668470545: New connection from 172.18.0.1:46680 on port 1883.
+1668470545: New client connected from 172.18.0.1:46680 as Celu (p2, c0, k1200, u'Otto').
+1668470566: New connection from 172.18.0.1:46682 on port 1883.
+1668470566: New client connected from 172.18.0.1:46682 as Carlos (p2, c0, k1200, u'Flask').
+1668470613: New connection from 172.18.0.1:46684 on port 1883.
+1668470613: Client Carlos disconnected, not authorised.
+1668470663: New connection from 172.18.0.3:40685 on port 1883.
+1668470663: Client auto-9120FC23-ACB4-6AC2-3805-179C5D5C4EB2 disconnected, not authorised.
+1668470664: New connection from 172.18.0.3:44815 on port 1883.
+1668470664: Client auto-6554EC51-B61C-4E60-6C10-CA7DB981A9EF disconnected, not authorised.
+1668470666: New connection from 172.18.0.3:56415 on port 1883.
+1668470666: Client auto-E0AAE2C4-C6A9-3CD0-8917-4DC34CF5C076 disconnected, not authorised.
+1668470670: New connection from 172.18.0.3:34987 on port 1883.
+1668470670: Client auto-286439DF-C99C-9505-8099-CF834A2FEFC7 disconnected, not authorised.
+1668470677: New connection from 172.18.0.1:46688 on port 1883.
+1668470677: Client Carlos disconnected, not authorised.
+1668470678: New connection from 172.18.0.3:42791 on port 1883.
+1668470678: Client auto-CD6AD850-353A-5C64-51EF-832679247292 disconnected, not authorised.
+1668470694: New connection from 172.18.0.3:40865 on port 1883.
+1668470694: Client auto-D880870C-BD21-9FD8-186D-4CA139CAED42 disconnected, not authorised.
+1668470726: New connection from 172.18.0.3:53719 on port 1883.
+1668470726: Client auto-C6D56492-CC32-1EAA-30B4-5A13F58733BA disconnected, not authorised.
+1668470753: Client Celu disconnected.
+1668470753: New connection from 172.18.0.1:46690 on port 1883.
+1668470753: New client connected from 172.18.0.1:46690 as Celu (p2, c0, k1200, u'Otto').
+1668470772: New connection from 172.18.0.3:43905 on port 1883.
+1668470772: New client connected from 172.18.0.3:43905 as auto-DC1739F8-39E9-25B8-7666-8D93C49D8457 (p2, c1, k60, u'Flask').
+1668470805: New connection from 172.18.0.1:46694 on port 1883.
+1668470805: Client Carlos disconnected, not authorised.
+1668470933: New connection from 172.18.0.1:46696 on port 1883.
+1668470933: Client Carlos disconnected, not authorised.
+1668470953: Client auto-DC1739F8-39E9-25B8-7666-8D93C49D8457 closed its connection.
+1668470955: New connection from 172.18.0.3:36231 on port 1883.
+1668470955: New client connected from 172.18.0.3:36231 as auto-C3FA76F9-6836-2F96-8EC9-56A112DA6F4C (p2, c1, k60, u'Flask').
+1668470981: Client auto-C3FA76F9-6836-2F96-8EC9-56A112DA6F4C closed its connection.
+1668470983: New connection from 172.18.0.3:47693 on port 1883.
+1668470983: New client connected from 172.18.0.3:47693 as auto-9B2F15E2-1AC4-E7FD-E927-10AB362AF7AE (p2, c1, k60, u'Flask').
+1668471011: Client auto-9B2F15E2-1AC4-E7FD-E927-10AB362AF7AE closed its connection.
+1668471012: New connection from 172.18.0.3:42439 on port 1883.
+1668471012: New client connected from 172.18.0.3:42439 as auto-98120EE7-F21B-2C60-E540-5CA51E72FE2C (p2, c1, k60, u'Flask').
+1668471061: New connection from 172.18.0.1:46714 on port 1883.
+1668471061: Client Carlos disconnected, not authorised.
+1668471189: New connection from 172.18.0.1:46716 on port 1883.
+1668471189: Client Carlos disconnected, not authorised.
+1668471317: New connection from 172.18.0.1:46718 on port 1883.
+1668471317: Client Carlos disconnected, not authorised.
+1668471445: New connection from 172.18.0.1:46720 on port 1883.
+1668471445: Client Carlos disconnected, not authorised.
+1668471759: New connection from 172.18.0.1:46722 on port 1883.
+1668471759: Client Carlos disconnected, not authorised.
+1668472020: New connection from 172.18.0.1:46740 on port 1883.
+1668472020: Client Carlos disconnected, not authorised.
+1668472142: Client auto-98120EE7-F21B-2C60-E540-5CA51E72FE2C closed its connection.
+1668472151: New connection from 172.18.0.3:48033 on port 1883.
+1668472151: New client connected from 172.18.0.3:48033 as auto-24A386CE-03ED-C6DB-E664-48E1DC589729 (p2, c1, k60, u'Flask').
+1668472253: New connection from 172.18.0.1:46768 on port 1883.
+1668472253: Client Carlos disconnected, not authorised.
+1668472293: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1668472318: Client auto-24A386CE-03ED-C6DB-E664-48E1DC589729 closed its connection.
+1668472320: New connection from 172.18.0.3:42145 on port 1883.
+1668472320: New client connected from 172.18.0.3:42145 as auto-F643F3EF-3A58-CE9F-010C-2CD87ADB2BAF (p2, c1, k60, u'Flask').
+1668472414: Client auto-F643F3EF-3A58-CE9F-010C-2CD87ADB2BAF closed its connection.
+1668472416: New connection from 172.18.0.3:51889 on port 1883.
+1668472416: New client connected from 172.18.0.3:51889 as auto-D6CE7FAE-BD00-BC99-13C8-FF53F4C4F244 (p2, c1, k60, u'Flask').
+1668472437: New connection from 172.18.0.1:46830 on port 1883.
+1668472437: Client Carlos disconnected, not authorised.
+1668472584: New connection from 172.18.0.1:46856 on port 1883.
+1668472584: Client Carlos disconnected, not authorised.
+1668472588: Client auto-D6CE7FAE-BD00-BC99-13C8-FF53F4C4F244 closed its connection.
+1668472590: New connection from 172.18.0.3:33917 on port 1883.
+1668472590: New client connected from 172.18.0.3:33917 as auto-C1287C38-BB17-CAFA-DF18-0AA56768D718 (p2, c1, k60, u'Flask').
+1668472665: Client auto-C1287C38-BB17-CAFA-DF18-0AA56768D718 closed its connection.
+1668472667: New connection from 172.18.0.3:49855 on port 1883.
+1668472667: New client connected from 172.18.0.3:49855 as auto-720E6839-F6CE-BEC5-7B7A-422EDE0DB25A (p2, c1, k60, u'Flask').
+1668472724: New connection from 172.18.0.1:46914 on port 1883.
+1668472724: Client Carlos disconnected, not authorised.
+1668472766: Client auto-720E6839-F6CE-BEC5-7B7A-422EDE0DB25A closed its connection.
+1668472768: New connection from 172.18.0.3:54765 on port 1883.
+1668472768: New client connected from 172.18.0.3:54765 as auto-01D5CBCA-A65D-82C3-90DC-408628E78422 (p2, c1, k60, u'Flask').
+1668472768: New connection from 127.0.0.1:46926 on port 1883.
+1668472768: New client connected from 127.0.0.1:46926 as auto-97C9E4ED-9026-4714-79F9-E5C4975F8AEE (p2, c1, k60, u'Otto').
+1668472981: New connection from 172.18.0.1:46960 on port 1883.
+1668472981: Client Carlos disconnected, not authorised.
+1668473047: mosquitto version 2.0.15 terminating
+1668473047: Saving in-memory database to /mosquitto/data//mosquitto.db.
