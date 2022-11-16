@@ -271,3 +271,10 @@
 1668472981: Client Carlos disconnected, not authorised.
 1668473047: mosquitto version 2.0.15 terminating
 1668473047: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1668616563: mosquitto version 2.0.15 starting
+1668616563: Config loaded from /mosquitto/config/mosquitto.conf.
+1668616563: Opening ipv4 listen socket on port 1883.
+1668616563: mosquitto version 2.0.15 running
+1668618365: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1668619643: mosquitto version 2.0.15 terminating
+1668619643: Saving in-memory database to /mosquitto/data//mosquitto.db.
