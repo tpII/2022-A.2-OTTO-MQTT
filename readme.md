@@ -14,4 +14,4 @@ La bitácora del proyecto se encuentra disponible en la [Wiki](https://github.co
 ### Instrucciones
 * Construir la imagen de flask desde el directorio docker/flask con el comando `docker build -t compose-flask .`
 * Ejecutar `docker-compose up -d` desde el directorio Docker para levantar el broker mosquitto, el servidor flask y el broker kafka
-* Ingresar por consola al broker kafka y crear el topic para enviar mensajes a Otto `kafka-topics --bootstrap-server broker:9092 --create --topic quickstart`
+* Ingresar por consola al broker kafka y crear el topic para enviar mensajes a Otto `kafka-topics --bootstrap-server broker:9092 --create --topic otto-kafka`
