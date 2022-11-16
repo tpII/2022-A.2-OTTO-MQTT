@@ -18,7 +18,7 @@ def home():
 @app.route('/walk', methods=['GET', 'POST'])
 def walk():
    client.publish(topic,"walk")
-   return (''), 204
+   return (''), 204 #con este se mantiene en la misma pag
 
 @app.route('/dance', methods=['GET', 'POST'])
 def dance():
