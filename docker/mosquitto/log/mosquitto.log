@@ -283,3 +283,94 @@
 1668618431: mosquitto version 2.0.15 running
 1668618760: mosquitto version 2.0.15 terminating
 1668618760: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1668618839: mosquitto version 2.0.15 starting
+1668618839: Config loaded from /mosquitto/config/mosquitto.conf.
+1668618839: Opening ipv4 listen socket on port 1883.
+1668618839: mosquitto version 2.0.15 running
+1668618839: New connection from 172.18.0.24:45985 on port 1883.
+1668618839: New client connected from 172.18.0.24:45985 as auto-F69BB30C-8896-3015-6EB2-F3806150A529 (p2, c1, k60, u'Flask').
+1668618908: New connection from 127.0.0.1:53990 on port 1883.
+1668618908: Client auto-E2B88CF9-5778-6C50-57C1-6E51FAE7A1D0 disconnected, not authorised.
+1668618978: New connection from 127.0.0.1:53992 on port 1883.
+1668618978: New client connected from 127.0.0.1:53992 as auto-D066A790-0936-085A-588C-9723468ACFE1 (p2, c1, k60, u'Otto').
+1668619021: Client auto-D066A790-0936-085A-588C-9723468ACFE1 disconnected.
+1668620640: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1668621054: Client auto-F69BB30C-8896-3015-6EB2-F3806150A529 closed its connection.
+1668621058: New connection from 172.18.0.24:51283 on port 1883.
+1668621058: New client connected from 172.18.0.24:51283 as auto-78030473-55A0-5CED-6B76-ECCD33B8761B (p2, c1, k60, u'Flask').
+1668621797: Client auto-78030473-55A0-5CED-6B76-ECCD33B8761B closed its connection.
+1668621820: New connection from 172.18.0.24:58465 on port 1883.
+1668621820: New client connected from 172.18.0.24:58465 as auto-FA65C877-C242-7589-44A7-1EEF807D7C98 (p2, c1, k60, u'Flask').
+1668621838: New connection from 127.0.0.1:54022 on port 1883.
+1668621838: New client connected from 127.0.0.1:54022 as auto-51908361-A391-5A0C-46F5-DE5C0DCC7C04 (p2, c1, k60, u'Otto').
+1668622441: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1668623073: Client auto-FA65C877-C242-7589-44A7-1EEF807D7C98 closed its connection.
+1668623103: New connection from 172.18.0.24:50273 on port 1883.
+1668623103: New client connected from 172.18.0.24:50273 as auto-8BB1AF4F-21EE-7224-32C4-B1EEDE7A8396 (p2, c1, k60, u'Flask').
+1668623432: Client auto-8BB1AF4F-21EE-7224-32C4-B1EEDE7A8396 closed its connection.
+1668623442: New connection from 172.18.0.24:48113 on port 1883.
+1668623442: New client connected from 172.18.0.24:48113 as auto-645735DE-C965-28C7-0609-E01AFC055ACC (p2, c1, k60, u'Flask').
+1668623509: Client auto-645735DE-C965-28C7-0609-E01AFC055ACC closed its connection.
+1668623514: New connection from 172.18.0.24:36791 on port 1883.
+1668623514: New client connected from 172.18.0.24:36791 as auto-1625733C-6256-5CE8-8385-DF326B055477 (p2, c1, k60, u'Flask').
+1668623609: Client auto-1625733C-6256-5CE8-8385-DF326B055477 closed its connection.
+1668623614: New connection from 172.18.0.24:40079 on port 1883.
+1668623614: New client connected from 172.18.0.24:40079 as auto-2B6E2767-E9B8-BE1E-6D93-1CCC13D9ECAA (p2, c1, k60, u'Flask').
+1668623714: Client auto-2B6E2767-E9B8-BE1E-6D93-1CCC13D9ECAA closed its connection.
+1668623726: New connection from 172.18.0.24:40819 on port 1883.
+1668623726: New client connected from 172.18.0.24:40819 as auto-2CE4DC53-F955-90D9-A3D8-C4948129E665 (p2, c1, k60, u'Flask').
+1668623744: Client auto-2CE4DC53-F955-90D9-A3D8-C4948129E665 closed its connection.
+1668623745: mosquitto version 2.0.15 terminating
+1668623745: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1668623758: mosquitto version 2.0.15 starting
+1668623758: Config loaded from /mosquitto/config/mosquitto.conf.
+1668623758: Opening ipv4 listen socket on port 1883.
+1668623758: mosquitto version 2.0.15 running
+1668623759: New connection from 172.18.0.24:58501 on port 1883.
+1668623759: New client connected from 172.18.0.24:58501 as auto-AD99F965-5806-A20C-9708-26135E350F73 (p2, c1, k60, u'Flask').
+1668623850: Client auto-AD99F965-5806-A20C-9708-26135E350F73 closed its connection.
+1668623855: New connection from 172.18.0.24:42465 on port 1883.
+1668623855: New client connected from 172.18.0.24:42465 as auto-6AAC90AE-1902-7DF2-2A9F-3F1456B3B40B (p2, c1, k60, u'Flask').
+1668624005: Client auto-6AAC90AE-1902-7DF2-2A9F-3F1456B3B40B closed its connection.
+1668624015: New connection from 172.18.0.24:38387 on port 1883.
+1668624015: New client connected from 172.18.0.24:38387 as auto-D619CA39-1211-6E02-1317-42688E1F62FB (p2, c1, k60, u'Flask').
+1668624125: New connection from 127.0.0.1:54184 on port 1883.
+1668624125: New client connected from 127.0.0.1:54184 as auto-AD74FC51-DAED-880E-B6D1-8DC78CF2D07E (p2, c1, k60, u'Otto').
+1668624199: Client auto-AD74FC51-DAED-880E-B6D1-8DC78CF2D07E disconnected.
+1668624202: New connection from 127.0.0.1:54190 on port 1883.
+1668624202: New client connected from 127.0.0.1:54190 as auto-66F82865-4675-D37B-A295-19CA2624B8AD (p2, c1, k60, u'Otto').
+1668624786: Client auto-D619CA39-1211-6E02-1317-42688E1F62FB closed its connection.
+1668624791: New connection from 172.18.0.24:58807 on port 1883.
+1668624791: New client connected from 172.18.0.24:58807 as auto-A5B2CAFF-CB86-CA07-37EF-C2087571657F (p2, c1, k60, u'Flask').
+1668624878: Client auto-A5B2CAFF-CB86-CA07-37EF-C2087571657F closed its connection.
+1668624891: New connection from 172.18.0.24:56405 on port 1883.
+1668624891: New client connected from 172.18.0.24:56405 as auto-A86A2A68-0355-5506-CAD9-2AA8509F1E03 (p2, c1, k60, u'Flask').
+1668624934: Client auto-A86A2A68-0355-5506-CAD9-2AA8509F1E03 closed its connection.
+1668624938: New connection from 172.18.0.24:39169 on port 1883.
+1668624938: New client connected from 172.18.0.24:39169 as auto-20AB2C19-5FA1-377C-C4DE-B5E0178FAE9C (p2, c1, k60, u'Flask').
+1668625337: Client auto-20AB2C19-5FA1-377C-C4DE-B5E0178FAE9C closed its connection.
+1668625362: New connection from 172.18.0.24:37255 on port 1883.
+1668625362: New client connected from 172.18.0.24:37255 as auto-2E9EED06-5F6C-6648-AC64-CD059654E750 (p2, c1, k60, u'Flask').
+1668625815: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1668626968: Client auto-2E9EED06-5F6C-6648-AC64-CD059654E750 closed its connection.
+1668626974: New connection from 172.18.0.24:32955 on port 1883.
+1668626974: New client connected from 172.18.0.24:32955 as auto-D244528C-F386-64BD-32A2-B9EEBCBD08F1 (p2, c1, k60, u'Flask').
+1668627104: mosquitto version 2.0.15 terminating
+1668627104: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1668627120: mosquitto version 2.0.15 starting
+1668627120: Config loaded from /mosquitto/config/mosquitto.conf.
+1668627120: Opening ipv4 listen socket on port 1883.
+1668627120: mosquitto version 2.0.15 running
+1668627121: New connection from 172.18.0.24:34929 on port 1883.
+1668627121: New client connected from 172.18.0.24:34929 as auto-D9A64A12-1AFB-675F-AD45-D9CE9FA50CAE (p2, c1, k60, u'Flask').
+1668627121: New connection from 172.18.0.24:48531 on port 1883.
+1668627121: New client connected from 172.18.0.24:48531 as auto-D0325ECD-7952-CD5D-B7D8-CA4C6342C95C (p2, c1, k60, u'Flask').
+1668628040: Client auto-D0325ECD-7952-CD5D-B7D8-CA4C6342C95C closed its connection.
+1668628040: New connection from 172.18.0.24:36211 on port 1883.
+1668628040: New client connected from 172.18.0.24:36211 as auto-C4D11827-45B7-2E89-AB1E-7080A8D0494D (p2, c1, k60, u'Flask').
+1668628053: Client auto-C4D11827-45B7-2E89-AB1E-7080A8D0494D closed its connection.
+1668628053: Client auto-D9A64A12-1AFB-675F-AD45-D9CE9FA50CAE closed its connection.
+1668628060: New connection from 172.18.0.24:45657 on port 1883.
+1668628060: New client connected from 172.18.0.24:45657 as auto-6D2755EE-ED30-08DF-829B-4B54BD4A67F3 (p2, c1, k60, u'Flask').
+1668628703: mosquitto version 2.0.15 terminating
+1668628703: Saving in-memory database to /mosquitto/data//mosquitto.db.

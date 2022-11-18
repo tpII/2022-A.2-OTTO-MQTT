@@ -2,14 +2,26 @@
 <html>
   <head>
     <title>Otto MQTT</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='home.css')}}">
   </head>
   <body>
-    <h1>¡Otto MQTT!</h1>
-    <form action="/walk" method="post">
-      <button type="submit">Caminar</button>
-    </form>
-    <form action="/dance" method="post">
-      <button type="submit">Bailar</button>
-    </form>
+
+    <section id="pantalla_div">
+        <div class="izquierda">
+          <h1>¡Otto MQTT!</h1>
+          <img src="static/image-otto.png"> 
+          <button class="btn btn-1"> camina adelante</button>
+          aca va a estar  otto y las flechas
+        </div>
+        <div class="derecha">
+          <form action="/walkForward" method="post">
+            <button type="submit">Caminar</button>
+          </form>
+          <form action="/dance" method="post">
+            <button type="submit">Bailar</button>
+          </form>
+          aca van a estar la seleccion y los movimientos
+        </div>
+    </section>    
   </body>
 </html>
