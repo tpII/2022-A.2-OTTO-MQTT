@@ -46,7 +46,7 @@ if __name__ == '__main__':
     client = mqtt.Client()
     client.username_pw_set('Flask', 'DefaultFlask')
     client.on_connect = on_connect
-    client.connect('172.18.0.2')
+    client.connect('172.19.0.3')
     client.loop_start()
 
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port=5000, debug=True)
