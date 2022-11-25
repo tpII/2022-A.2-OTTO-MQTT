@@ -93,15 +93,12 @@ Servo leg_right;
 Servo leg_left;
 
 void setup() {
-<<<<<<< HEAD
   Serial.begin(9600);
 
   setup_wifi();
   mqttClient.setServer(mqtt_server, mqtt_server_port);
   mqttClient.setCallback(callback);
 
-=======
->>>>>>> adding-kafka-broker
   foot_right.attach(D4,500,2400);
   foot_left.attach(D3,500,2400);
   leg_right.attach(D2,500,2400);
@@ -109,7 +106,6 @@ void setup() {
 }
 
 void loop(){
-<<<<<<< HEAD
 
    if (!mqttClient.connected()) {
     connect();
@@ -117,48 +113,6 @@ void loop(){
  
   mqttClient.loop();
 
-=======
-  leg_right.write(0);
-  delay(500);
-  leg_right.write(90);
-  delay(500);
-  leg_right.write(180);
-  delay(500);
->>>>>>> adding-kafka-broker
   leg_right.write(90);
   
-<<<<<<< HEAD
-=======
-  delay(1000);
-
-  leg_left.write(0);
-  delay(500);
-  leg_left.write(90);
-  delay(500);
-  leg_left.write(180);
-  delay(500);
-  leg_left.write(90);
-  
-  delay(1000);
-
-  foot_right.write(0);
-  delay(500);
-  foot_right.write(90);
-  delay(500);
-  foot_right.write(180);
-  delay(500);
-  foot_right.write(90);
-
-  delay(1000);
-
-  foot_left.write(0);
-  delay(500);
-  foot_left.write(90);  
-  delay(500);
-  foot_left.write(180);
-  delay(500);
-  foot_left.write(90);  
-  
-  delay(1000);
->>>>>>> adding-kafka-broker
 }
