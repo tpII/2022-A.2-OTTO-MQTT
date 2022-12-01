@@ -1,55 +1,28 @@
-#include <Servo.h>
+#include "Oscilador.h"
+#include "Mqtt.h"
+
 #include <Arduino.h>
 #include <ESP8266WiFi.h>
-#include <PubSubClient.h>
 #include <WiFiUdp.h>
 
-//--------------------------------------
-// configuracion
-//--------------------------------------
-
 const char* ssid = "Otto";
-const char* password = "lauchaputo";
-const char* mqtt_server = "163.10.142.9"; 
-const uint16_t mqtt_server_port = 1883; 
-const char* mqttUser = "Otto";
-const char* mqttPassword = "DefaultOtto";
-const char* mqttTopicIn = "esp-8266-in";
-const char* mqttTopicOut = "esp-8266-out";
+const char* password = "OttoPassword";
+
 
 WiFiClient wifiClient;
 PubSubClient mqttClient(wifiClient);
-
-
-//pie derecho - D4
-//pie izquierdo - D3
-//pierna derecha - D2
-//pierna izq - D1
-
-//Sensor trigger - D5
-//Sensor echo - D6
-
 
 //--------------------------------------
 // funcion para setear wifi llamada una sola vez
 //--------------------------------------
 void setup_wifi() {
-
-  delay(10);
-  Serial.println();
-  Serial.print("Connecting to ");
-  Serial.println(ssid);
-
   WiFi.begin(ssid, password);
 
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(500);
-    Serial.print(".");
-  }
-
-  //wifiClient.setInsecure();
-
-  Serial.println("WiFi connected");
+  // while (WiFi.status() != WL_CONNECTED) {
+  //   delay(500);
+  //   Serial.print(".");
+  // }
+  // Serial.println("WiFi connected");
 }
 
 //--------------------------------------
