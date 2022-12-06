@@ -1,2 +1,4 @@
 flask
 redis
+confluent_kafka
+paho-mqtt
