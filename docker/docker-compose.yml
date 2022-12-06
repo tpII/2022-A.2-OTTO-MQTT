@@ -25,6 +25,9 @@ services:
         ipv4_address: 172.18.0.24
     env_file:
       - flask-variables.env
+    depends_on:
+      - mosquitto
+      - kafka-broker
   kafka-zookeeper:
     image: confluentinc/cp-zookeeper:7.0.1
     container_name: kafka-zookeeper
