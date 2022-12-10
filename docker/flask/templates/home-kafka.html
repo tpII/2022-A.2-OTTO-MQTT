@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Otto MQTT</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='home.css')}}">
+    <!--Bootstrap Icons CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    
+  </head>
+
+  <body>
+    <section id="pantalla_div">
+        <div class="izquierda">
+          <img class="img-otto" src="static/image-otto.png"> 
+          <!--<div class="flechas">
+            <button class="btn-1 btn-flecha flecha-up"> </button>
+              <button class="btn-1 btn-flecha flecha-left"> </button>
+              <button class="btn-1 btn-flecha flecha-right"> </button>
+            <button class="btn-1 btn-flecha flecha-down"> </button>
+          </div>-->
+          <div class="grilla-flechas">
+            <button class="btn-1 btn-flecha flecha-up"> </button>
+              <button class="btn-1 btn-flecha flecha-left"> </button>
+              <button class="btn-1 btn-flecha flecha-right"> </button>
+            <button class="btn-1 btn-flecha flecha-down"> </button>
+          </div>
+        </div>
+        <div class="derecha">
+          <!--
+          <div class="switch-button">
+            <input class="switch-button-checkbox" type="checkbox"></input>
+            <label class="switch-button-label" for=""><span class="switch-button-label-span">Mosquitto</span></label>
+          </div>
+        -->
+          <div class="cartel">
+            Seleccione metodo de comunicacion:
+            <form action="/mosquitto" method="post">
+              <button  class="btn btn-1">Mosquitto</button>
+            </form>
+            <form action="/kafka" method="post">
+              <button  class="btn btn-1">Kafka</button>
+            </form>
+          </div>          
+          <div class="grilla">
+              <form action="/walkForward" method="post">
+                <button  type="submit" class="btn btn-1">Caminar</button>
+              </form>
+            
+            
+              <button class="btn btn-1"> turn right</button>
+              <button class="btn btn-1"> turnleft</button>
+              <button class="btn btn-1"> bend</button>
+              <button class="btn btn-1"> shake leg</button>
+              <button class="btn btn-1"> moonwalker</button>
+              <button class="btn btn-1"> crusaito</button>
+              <button class="btn btn-1"> flapping</button>
+
+              <button class="btn btn-1"> swing</button>
+              <button class="btn btn-1"> tiptoe swing</button>
+              <button class="btn btn-1"> up down</button>
+              <button class="btn btn-1"> happy</button>
+              <button class="btn btn-1"> sad</button>
+              <button class="btn btn-1"> victory</button>
+              <button class="btn btn-1"> sleeping</button>
+
+              <button class="btn btn-1"> confused</button>
+              <button class="btn btn-1"> fart</button>
+              <button class="btn btn-1"> fail</button>
+              <button class="btn btn-1"> follow mode</button>
+              <button class="btn btn-1"> retrieve mode</button>
+              <button class="btn btn-1">avoid obstacles</button>
+          </div>
+          <form action="/walkForward" method="post" >
+            <button  type="submit" class="btn btn-1">Caminar</button>
+          </form>
+          <form action="/dance" method="post">
+            <button type="submit">Bailar</button>
+          </form>
+        </div>
+    </section>    
+  </body>
+</html>
