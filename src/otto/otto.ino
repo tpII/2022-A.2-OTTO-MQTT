@@ -25,7 +25,7 @@ const char* mqtt_server = "192.168.0.200";
 const uint16_t mqtt_server_port = 1883; 
 const char* mqttUser = "Otto";
 const char* mqttPassword = "DefaultOtto";
-const char* mqttTopicIn = "otto-in";
+const char* mqttTopicIn = "otto";
 const char* mqttTopicOut = "otto-out";
 
 long ultrasound();

@@ -121,7 +121,7 @@ void Otto::oscillateServos(int A[4], int O[4], int T, double phase_diff[4]){
   //Oscilo durante el tiempo indicado por la variable T 
    for (double x=ref; x<=T+ref; x=millis()){
      for (int i=0; i<4; i++){
-        servo[i].refresh();
+        servo[i].update();
      }
   }
 }
