@@ -3,6 +3,7 @@ name: 'Otto'
 services:
   mosquitto:
     image: eclipse-mosquitto
+    container_name: mosquitto
     volumes:
       - ./mosquitto/config:/mosquitto/config
       - ./mosquitto/data:/mosquitto/data
@@ -16,6 +17,7 @@ services:
 
   flask-web:
     image: flask
+    container_name: flask
     ports:
       - 5000:5000
     volumes:
@@ -27,29 +29,45 @@ services:
       - flask-variables.env
     depends_on:
       - mosquitto
-      - kafka-broker
-  kafka-zookeeper:
-    image: confluentinc/cp-zookeeper:7.0.1
-    container_name: kafka-zookeeper
+      - broker
+
+  zookeeper:
+    image: confluentinc/cp-zookeeper:5.5.0
+    container_name: zookeeper
     environment:
       ZOOKEEPER_CLIENT_PORT: 2181
-      ZOOKEEPER_TICK_TIME: 2000
+    networks:
+      vpcbr:
+        ipv4_address: 172.18.0.25
 
-  kafka-broker:
-    image: confluentinc/cp-kafka:7.0.1
-    container_name: kafka-broker
-    ports:
-      - "9092:9092"
+  broker:
+    image: confluentinc/cp-kafka:5.5.0
+    container_name: broker
     depends_on:
-      - kafka-zookeeper
+      - zookeeper
     environment:
       KAFKA_BROKER_ID: 1
-      KAFKA_ZOOKEEPER_CONNECT: 'kafka-zookeeper:2181'
-      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_INTERNAL:PLAINTEXT
-      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092,PLAINTEXT_INTERNAL://kafka-broker:29092
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://broker:9092
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
-      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
-      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+    networks:
+      vpcbr:
+        ipv4_address: 172.18.0.26
+
+  proxy-mqtt:
+    image: proxy
+    container_name: proxy
+    volumes:
+      - ./proxy:/app
+    networks:
+      vpcbr:
+        ipv4_address: 172.18.0.27
+    env_file:
+      - flask-variables.env
+    depends_on:
+      - mosquitto
+      - broker
+
 networks:
   vpcbr:
     driver: bridge
