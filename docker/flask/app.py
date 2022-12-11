@@ -51,11 +51,6 @@ def walkLeft():
    client.publish(topic,"walk left")
    return (""), 204 #con este se mantiene en la misma pag
 
-@app.route('/walkBackward', methods=['GET', 'POST'])
-def walkBackward():
-   client.publish(topic,"walk backward")
-   return (''), 204 #con este se mantiene en la misma pag
-
 @app.route('/turnRight', methods=['GET', 'POST'])
 def turnRight():
    client.publish(topic,"turnRight")
