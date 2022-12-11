@@ -8,7 +8,7 @@ bool Oscillator::shouldUpdate()
   // Tiempo interno del microcontrolador desde el comienzo de su funcionamiento
   long now = millis();
  
-  //-- Check if the timeout has passed
+
   if(now - lastUpdate > UPDATE_PERIOD) {
     lastUpdate = now;   
 
