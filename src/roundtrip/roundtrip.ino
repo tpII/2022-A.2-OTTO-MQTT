@@ -1,24 +1,15 @@
-#include <Servo.h>
 #include <Arduino.h>
 #include <ESP8266WiFi.h>
 #include <PubSubClient.h>
 #include <WiFiUdp.h>
-#include "lib_otto.h"
+
 
 //--------------------------------------
 // configuracion
 //--------------------------------------
 
-#define PIE_DER D4
-#define PIE_IZQ D3
-#define PIERNA_DER D2
-#define PIERNA_IZQ D1
-#define TRIGGER D5 // ultrasonic sensor trigger pin
-#define ECHO D6 // ultrasonic sensor echo pin
 
-Otto otto;
-Otto::function f;
-int intValue=0;
+
 const char* ssid = "Otto";             // Parametros del AP
 const char* password = "12345678";     // 
 const char* mqtt_server = "192.168.0.200"; //Parametros del broker MQTT
@@ -65,16 +56,9 @@ void callback(char* topic, byte* payload, unsigned int length) {
     Serial.print((char)payload[i]);
   }
   Serial.println();
+  // Confirmo que recibi el mensaje, enviando otro mensaje al broker
+  mqttClient.publish(mqttTopicOut,"Recibido");
 
-  if (length >= 2) { //Transformo el mensaje a int
-    payload[length] = '\0'; // Make payload a string by NULL terminating it.
-    intValue = atoi((char *)payload);
-    Serial.print(intValue);
-  }
-  // Obtengo la funcion del movimiento llamada por el mensaje
-  f = otto.Otto::doActionsArray [intValue];
-  // Invoco el movimiento
-  (otto.*f) ();
 }
 
 //--------------------------------------
@@ -100,17 +84,10 @@ void connect() {
 void setup() {
   
   Serial.begin(9600);
-    // Seteo los pines del otto
-  otto.init(PIERNA_IZQ, PIERNA_DER, PIE_IZQ,PIE_DER,TRIGGER,ECHO);
-  otto.home(); //Posicion inicial
-  delay(500);
-  intValue=0;
-  
   setup_wifi();
   mqttClient.setServer(mqtt_server, mqtt_server_port);
   mqttClient.setCallback(callback);
 
-  
 }
 
 void loop(){
@@ -121,11 +98,4 @@ void loop(){
  
   mqttClient.loop();
 
-  // Si la ultima funcion invocada fue alguna de las que usan el ultrasonido
-  // sigo invocando esta funcion, hasta que se invoque a otra.
-  if (intValue >= 20){ 
-    (otto.*f) ();
-  }
-
-  
 }
