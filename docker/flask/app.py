@@ -3,12 +3,11 @@ from redis import Redis
 import os
 import paho.mqtt.client as mqtt
 from confluent_kafka import Producer
-from flask import render_template
 
 app = Flask(__name__)
 app.config["TEMPLATES_AUTO_RELOAD"] = True
 redis = Redis(host="redis",port=6379)
-topic = os.environ['TOPIC']
+topic = 'otto'
 
 def on_connect(client, userdata, flags, rc):
     client.publish(topic, "Cliente conectado. -Flask")
@@ -18,137 +17,157 @@ def home():
     flash("Actualmente te comunicas a traves de Mosquitto con Otto!")
     return render_template('home.html')
 
-@app.route('/kafka', methods=['GET', 'POST'])
+@app.route("/kafka", methods=['GET', 'POST'])
 def kafka():
    flash("Excelente eleccion, ahora te comunicas a traves de Kafka con Otto!")
    client.publish(topic,"cambiame a kafka")
-   return render_template('home.html')
+   producer.produce(topic, b"cambiame a kafka")
+   return render_template('home-kafka.html')
 
-@app.route('/mosquitto', methods=['GET', 'POST'])
+@app.route("/mosquitto", methods=['GET', 'POST'])
 def mosquitto():
    flash("Excelente eleccion, ahora te comunicas a traves de Mosquitto con Otto!")
    client.publish(topic,"cambiame a mosquitto")
+   producer.produce(topic, b"cambiame a mosquitto")
    return render_template('home.html')
 
 
-@app.route('/walkForward', methods=['GET', 'POST'])
+@app.route("/posInicial", methods=['GET', 'POST'])
+def posInicial():
+   client.publish(topic,"00")
+   producer.produce(topic, b"00")
+   return (''), 204 #con este se mantiene en la misma pag
+
+@app.route("/walkForward", methods=['GET', 'POST'])
 def walkForward():
-   client.publish(topic,"walk forward")
+   client.publish(topic,"01")
+   producer.produce(topic, b"01")
    return (""), 204 #con este se mantiene en la misma pag
 
 @app.route("/walkBackward", methods=["GET", "POST"])
 def walkBackward():
-   client.publish(topic,"walk backward")
+   client.publish(topic,"02")
+   producer.produce(topic, b"02")
    return (""), 204 #con este se mantiene en la misma pag
 
-@app.route("/walkRight", methods=["GET", "POST"])
-def walkRight():
-   client.publish(topic,"walk right")
-   return (""), 204 #con este se mantiene en la misma pag
-
-@app.route("/walkLeft", methods=["GET", "POST"])
-def walkLeft():
-   client.publish(topic,"walk left")
-   return (""), 204 #con este se mantiene en la misma pag
-
-@app.route('/turnRight', methods=['GET', 'POST'])
+@app.route("/turnRight", methods=['GET', 'POST'])
 def turnRight():
-   client.publish(topic,"turnRight")
+   client.publish(topic,"03")
+   producer.produce(topic, b"03")
    return (''), 204 #con este se mantiene en la misma pag
 
-@app.route('/turnLeft', methods=['GET', 'POST'])
+@app.route("/turnLeft", methods=['GET', 'POST'])
 def turnLeft():
-   client.publish(topic,"turnLeft")
+   client.publish(topic,"04")
+   producer.produce(topic, b"04")
    return (''), 204 #con este se mantiene en la misma pag
 
-@app.route('/bend', methods=['GET', 'POST'])
+@app.route("/bend", methods=['GET', 'POST'])
 def bend():
-   client.publish(topic,"bend")
+   client.publish(topic,"05")
+   producer.produce(topic, b"05")
    return (''), 204 #con este se mantiene en la misma pag
 
-@app.route('/shakeLeg', methods=['GET', 'POST'])
+@app.route("/shakeLeg", methods=['GET', 'POST'])
 def shakeLeg():
-   client.publish(topic,"shakeLeg")
+   client.publish(topic,"06")
+   producer.produce(topic, b"06")
    return (''), 204 #con este se mantiene en la misma pag
 
-@app.route('/moonwalker', methods=['GET', 'POST'])
+@app.route("/moonwalker", methods=['GET', 'POST'])
 def moonwalker():
-   client.publish(topic,"moonwalker")
+   client.publish(topic,"07")
+   producer.produce(topic, b"07")
    return (''), 204 #con este se mantiene en la misma pag
 
-@app.route('/crusaito', methods=['GET', 'POST'])
+@app.route("/crusaito", methods=['GET', 'POST'])
 def crusaito():
-   client.publish(topic,"crusaito")
+   client.publish(topic,"08")
+   producer.produce(topic, b"08")
    return (''), 204 #con este se mantiene en la misma pag
 
-@app.route('/flapping', methods=['GET', 'POST'])
+@app.route("/flapping", methods=['GET', 'POST'])
 def flapping():
-   client.publish(topic,"flapping")
+   client.publish(topic,"09")
+   producer.produce(topic, b"09")
    return (''), 204 #con este se mantiene en la misma pag
 
-@app.route('/swing', methods=['GET', 'POST'])
+@app.route("/swing", methods=['GET', 'POST'])
 def swing():
-   client.publish(topic,"swing")
+   client.publish(topic,"10")
+   producer.produce(topic, b"10")
    return (''), 204 #con este se mantiene en la misma pag
 
-@app.route('/tiptoeSwing', methods=['GET', 'POST'])
+@app.route("/tiptoeSwing", methods=['GET', 'POST'])
 def tiptoeSwing():
-   client.publish(topic,"tiptoeSwing")
+   client.publish(topic,"11")
+   producer.produce(topic, b"11")
    return (''), 204 #con este se mantiene en la misma pag
 
-@app.route('/upDown', methods=['GET', 'POST'])
+@app.route("/upDown", methods=['GET', 'POST'])
 def upDown():
-   client.publish(topic,"upDown")
+   client.publish(topic,"12")
+   producer.produce(topic, b"12")
    return (''), 204 #con este se mantiene en la misma pag
 
-@app.route('/happy', methods=['GET', 'POST'])
+@app.route("/happy", methods=['GET', 'POST'])
 def happy():
-   client.publish(topic,"happy")
+   client.publish(topic,"13")
+   producer.produce(topic, b"13")
    return (''), 204 #con este se mantiene en la misma pag
 
-@app.route('/sad', methods=['GET', 'POST'])
+@app.route("/sad", methods=['GET', 'POST'])
 def sad():
-   client.publish(topic,"sad")
+   client.publish(topic,"14")
+   producer.produce(topic, b"14")
    return (''), 204 #con este se mantiene en la misma pag
 
-@app.route('/victory', methods=['GET', 'POST'])
+@app.route("/victory", methods=['GET', 'POST'])
 def victory():
-   client.publish(topic,"victory")
+   client.publish(topic,"15")
+   producer.produce(topic, b"15")
    return (''), 204 #con este se mantiene en la misma pag
 
-@app.route('/sleeping', methods=['GET', 'POST'])
+@app.route("/sleeping", methods=['GET', 'POST'])
 def sleeping():
-   client.publish(topic,"sleeping")
+   client.publish(topic,"16")
+   producer.produce(topic, b"16")
    return (''), 204 #con este se mantiene en la misma pag
 
-@app.route('/confused', methods=['GET', 'POST'])
+@app.route("/confused", methods=['GET', 'POST'])
 def confused():
-   client.publish(topic,"confused")
+   client.publish(topic,"17")
+   producer.produce(topic, b"17")
    return (''), 204 #con este se mantiene en la misma pag
 
-@app.route('/fart', methods=['GET', 'POST'])
+@app.route("/fart", methods=['GET', 'POST'])
 def fart():
-   client.publish(topic,"fart")
+   client.publish(topic,"18")
+   producer.produce(topic, b"18")
    return (''), 204 #con este se mantiene en la misma pag
 
-@app.route('/fail', methods=['GET', 'POST'])
+@app.route("/fail", methods=['GET', 'POST'])
 def fail():
-   client.publish(topic,"fail")
+   client.publish(topic,"19")
+   producer.produce(topic, b"19")
    return (''), 204 #con este se mantiene en la misma pag
 
-@app.route('/followMode', methods=['GET', 'POST'])
+@app.route("/followMode", methods=['GET', 'POST'])
 def followMode():
-   client.publish(topic,"followMode")
+   client.publish(topic,"20")
+   producer.produce(topic, b"20")
    return (''), 204 #con este se mantiene en la misma pag
 
-@app.route('/retrieveMode', methods=['GET', 'POST'])
+@app.route("/retrieveMode", methods=['GET', 'POST'])
 def retrieveMode():
-   client.publish(topic,"retrieveMode")
+   client.publish(topic,"21")
+   producer.produce(topic, b"21")
    return (''), 204 #con este se mantiene en la misma pag
 
-@app.route('/avoidObstacles', methods=['GET', 'POST'])
+@app.route("/avoidObstacles", methods=['GET', 'POST'])
 def avoidObstacles():
-   client.publish(topic,"avoidObstacles")
+   client.publish(topic,"22")
+   producer.produce(topic, b"22")
    return (''), 204 #con este se mantiene en la misma pag
 
 @app.route("/dance", methods=["GET", "POST"])
@@ -162,7 +181,7 @@ def dance():
 if __name__ == "__main__":
    #cliente mqtt setup
    client = mqtt.Client()
-   client.username_pw_set("Flask", "DefaultFlask")
+   client.username_pw_set(os.environ['MQTT_USERNAME'], os.environ['MQTT_PASSWORD'])
    client.on_connect = on_connect
    client.connect("172.18.0.2")
    client.loop_start()
