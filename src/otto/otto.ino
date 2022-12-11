@@ -19,16 +19,15 @@
 Otto otto;
 Otto::function f;
 int intValue=0;
-const char* ssid = "Otto";
-const char* password = "lauchaputo";
-const char* mqtt_server = "192.168.0.200"; 
-const uint16_t mqtt_server_port = 1883; 
-const char* mqttUser = "Otto";
-const char* mqttPassword = "DefaultOtto";
-const char* mqttTopicIn = "otto";
-const char* mqttTopicOut = "otto-out";
+const char* ssid = "Otto";             // Parametros del AP
+const char* password = "12345678";     // 
+const char* mqtt_server = "192.168.0.200"; //Parametros del broker MQTT
+const uint16_t mqtt_server_port = 1883;    //
+const char* mqttUser = "Otto";             //
+const char* mqttPassword = "DefaultOtto";  //
+const char* mqttTopicIn = "otto";          //
+const char* mqttTopicOut = "otto-out";     //
 
-long ultrasound();
 
 WiFiClient wifiClient;
 PubSubClient mqttClient(wifiClient);
@@ -51,8 +50,6 @@ void setup_wifi() {
     Serial.print(".");
   }
 
-  //wifiClient.setInsecure();
-
   Serial.println("WiFi connected");
 }
 
@@ -68,16 +65,14 @@ void callback(char* topic, byte* payload, unsigned int length) {
     Serial.print((char)payload[i]);
   }
   Serial.println();
-  if (length >= 2) {
-    //Cast payload to an int pointer and fetch the value
-    //intValue = *((int*)payload); 
-    //intValue= atoi((char)payload[0]);
+  if (length >= 2) { //Transformo el mensaje a int
     payload[length] = '\0'; // Make payload a string by NULL terminating it.
     intValue = atoi((char *)payload);
     Serial.print(intValue);
   }
+  // Obtengo la funcion del movimiento llamada por el mensaje
   f = otto.Otto::doActionsArray [intValue];
-  
+  // Invoco el movimiento
   (otto.*f) ();
 }
 
@@ -102,14 +97,18 @@ void connect() {
 }
 
 void setup() {
+  
   Serial.begin(9600);
-
+  otto.init(PIERNA_IZQ, PIERNA_DER, PIE_IZQ,PIE_DER,TRIGGER,ECHO);
+  otto.home(); //Posicion inicial
+  delay(500);
+  intValue=0;
+    
   setup_wifi();
   mqttClient.setServer(mqtt_server, mqtt_server_port);
   mqttClient.setCallback(callback);
-  otto.init(PIERNA_IZQ, PIERNA_DER, PIE_IZQ,PIE_DER,TRIGGER,ECHO);
-  otto.home();
-  delay(500);
+  // Seteo los pines del otto
+  
 
 }
 
@@ -121,7 +120,9 @@ void loop(){
  
   mqttClient.loop();
 
-  if (intValue >= 20){
+  // Si la ultima funcion invocada fue alguna de las que usan el ultrasonido
+  // sigo invocando esta funcion, hasta que se invoque a otra.
+  if (intValue >= 20){ 
     (otto.*f) ();
   }
 

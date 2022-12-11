@@ -12,12 +12,15 @@ void Otto::init(int pierna_izq, int pierna_der, int pie_der, int pie_izq,int tr,
 
   trigger=tr;
   echo=ec;
+  
+  attachServos();
+  isOttoResting=false;
+  home();
+
+
   pinMode(trigger, OUTPUT); 
   pinMode(echo, INPUT); 
 
-  ultrasound();
-  attachServos();
-  isOttoResting=false;
 }
 //Funcion que retorna la distancia en cm
 long Otto::ultrasound() {
@@ -151,8 +154,9 @@ void Otto::home(){
   if(isOttoResting==false){ //Va a la posicion de descanso si es necesario
 
     int homes[4]={90, 90, 90, 90}; //Posiciones de descanso
-    moveServos(500,homes);   //Muevo los servos en medio segundo
+    moveServos(800,homes);   //Muevo los servos en medio segundo
 
+    delay(1000);
     detachServos();
     isOttoResting=true;
   }
@@ -225,8 +229,6 @@ void Otto::turnLeft(){
 }
 //---------------------------------------------------------
 //-- bend
-//--  Parametros:
-//--    steps:  numero de pasos
 //---------------------------------------------------------
 void Otto::bend (){
   int T=1400;
@@ -252,8 +254,6 @@ void Otto::bend (){
 
 //---------------------------------------------------------
 //-- shakeLeg
-//--  Parameters:
-//--    steps: Number of shakes
 //---------------------------------------------------------
 void Otto::shakeLeg (){
 
@@ -293,8 +293,6 @@ void Otto::shakeLeg (){
 
 //---------------------------------------------------------
 //--  up & down
-//--  Parametros:
-//--    steps:  numero de pasos
 //---------------------------------------------------------
 void Otto::updown(){
   int h = 25;
@@ -311,9 +309,7 @@ void Otto::updown(){
 
 
 //---------------------------------------------------------
-//-- swingFix
-//--  Parametros:
-//--    steps:  numero de pasos
+//-- swingFix: Igual que el swing, pero con los parametros fijos
 //---------------------------------------------------------
 void Otto::swingFix(){
   //-- Los dos pies tienen la misma amplitud y su offset es la mitad de la amplitud
@@ -328,7 +324,7 @@ void Otto::swingFix(){
 }
 
 //---------------------------------------------------------
-//-- Otto movement: swinging side to side
+//-- swing: balancearse de lado a lado
 //--  Parametros:
 //--    steps:  numero de pasos
 //--    T : periodo
@@ -345,8 +341,6 @@ void Otto::swing(int steps, int T,int h){
 
 //---------------------------------------------------------
 //-- tiptoeSwing
-//--  Parametros:
-//--   steps:  numero de pasos
 //---------------------------------------------------------
 void Otto::tiptoeSwing(){
   int h=25;
@@ -364,8 +358,6 @@ void Otto::tiptoeSwing(){
 
 //---------------------------------------------------------
 //-- moonwalker
-//--  Parametros:
-//--    Steps: numero de pasos
 //---------------------------------------------------------
 void Otto::moonwalker(){
   //-- Es una onda moviendose de un servo a otro.
@@ -383,9 +375,6 @@ void Otto::moonwalker(){
 
 //----------------------------------------------------------
 //-- crusaito
-//--   Parametros:
-//--     steps: Numero de pasos
-//--     T: Periodo
 //-----------------------------------------------------------
 void Otto::crusaito(){
   int h=20; //Altura
@@ -400,8 +389,6 @@ void Otto::crusaito(){
 
 //---------------------------------------------------------
 //-- flapping
-//--   Parametros:
-//--     steps: Numero de pasos
 //---------------------------------------------------------
 void Otto::flapping(){
   int h=25;//Altura
