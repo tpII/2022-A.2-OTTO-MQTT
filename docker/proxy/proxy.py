@@ -18,7 +18,7 @@ if __name__ == '__main__':
         'bootstrap.servers': '172.18.0.26:9092' ,
         'security.protocol': 'PLAINTEXT',
         'session.timeout.ms': 6000,
-        'group.id': 'hola',
+        'group.id': 'grupo',
         'auto.offset.reset': 'earliest',
         'enable.auto.offset.store': False
         }
