@@ -13,4 +13,5 @@ La bitácora del proyecto se encuentra disponible en la [Wiki](https://github.co
 
 ### Instrucciones
 * Construir la imagen de flask desde el directorio docker/flask con el comando `docker build . -t flask`
+* Construir la imagen del proxy desde el directorio docker/proxy con el comando `docker build . -t proxy`
 * Ejecutar `docker-compose up -d` desde el directorio Docker para levantar el broker mosquitto, el servidor flask y el broker kafka

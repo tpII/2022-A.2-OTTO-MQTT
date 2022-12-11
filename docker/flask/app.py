@@ -1,202 +1,267 @@
 from flask import Flask, render_template, flash
-from redis import Redis
 import os
 import paho.mqtt.client as mqtt
 from confluent_kafka import Producer
 
 app = Flask(__name__)
 app.config["TEMPLATES_AUTO_RELOAD"] = True
-redis = Redis(host="redis",port=6379)
 topic = 'otto'
+tipo = 'mosquitto' ##variable para saber con cual tipo de comunicacion estoy
 
 def on_connect(client, userdata, flags, rc):
-    client.publish(topic, "Cliente conectado. -Flask")
+    client.publish('debug', "Flask conectado!")
 
 @app.route("/")
 def home():
-    flash("Actualmente te comunicas a traves de Mosquitto con Otto!")
+    flash("Actualmente te comunicas a traves de Mosquitto con Otto!") ##mensaje que manda al iniciar
     return render_template('home.html')
 
 @app.route("/kafka", methods=['GET', 'POST'])
 def kafka():
-   flash("Excelente eleccion, ahora te comunicas a traves de Kafka con Otto!")
-   client.publish(topic,"cambiame a kafka")
-   producer.produce(topic, b"cambiame a kafka")
-   return render_template('home-kafka.html')
+   global tipo
+   flash("Excelente eleccion, ahora te comunicas a traves de Kafka con Otto!") ##msj cuando cambia de tipo de comnunicacion
+   if tipo=='mosquitto': ##cambio el tipo de comunicacion
+      client.publish(topic,"cambiame a kafka")
+      tipo='kafka'
+   return render_template('home.html')
 
 @app.route("/mosquitto", methods=['GET', 'POST'])
 def mosquitto():
-   flash("Excelente eleccion, ahora te comunicas a traves de Mosquitto con Otto!")
-   client.publish(topic,"cambiame a mosquitto")
-   producer.produce(topic, b"cambiame a mosquitto")
+   global tipo
+   flash("Excelente eleccion, ahora te comunicas a traves de Mosquitto con Otto!") ##msj cuando cambia de tipo de comnunicacion
+   if tipo=='kafka': ##cambio el tipo de comunicacion
+      producer.produce(topic, b"cambiame a mosquitto")
+      tipo='mosquitto'
    return render_template('home.html')
 
 
 @app.route("/posInicial", methods=['GET', 'POST'])
 def posInicial():
-   client.publish(topic,"00")
-   producer.produce(topic, b"00")
+   ##dependiendo del tipo de comunicacion actual, envio el msj al broker que corresponda
+   if tipo=='mosquitto': 
+      client.publish(topic,"00")
+   else:
+      producer.produce(topic, b"00")
    return (''), 204 #con este se mantiene en la misma pag
 
 @app.route("/walkForward", methods=['GET', 'POST'])
 def walkForward():
-   client.publish(topic,"01")
-   producer.produce(topic, b"01")
+   ##dependiendo del tipo de comunicacion actual, envio el msj al broker que corresponda
+   if tipo=='mosquitto':
+      client.publish(topic,"01")
+   else:
+      producer.produce(topic, b"01")
    return (""), 204 #con este se mantiene en la misma pag
 
 @app.route("/walkBackward", methods=["GET", "POST"])
 def walkBackward():
-   client.publish(topic,"02")
-   producer.produce(topic, b"02")
+   ##dependiendo del tipo de comunicacion actual, envio el msj al broker que corresponda
+   if tipo=='mosquitto':
+      client.publish(topic,"02")
+   else:
+      producer.produce(topic, b"02")
    return (""), 204 #con este se mantiene en la misma pag
 
 @app.route("/turnRight", methods=['GET', 'POST'])
 def turnRight():
-   client.publish(topic,"03")
-   producer.produce(topic, b"03")
+   ##dependiendo del tipo de comunicacion actual, envio el msj al broker que corresponda
+   if tipo=='mosquitto':
+      client.publish(topic,"03")
+   else:
+      producer.produce(topic, b"03")
    return (''), 204 #con este se mantiene en la misma pag
 
 @app.route("/turnLeft", methods=['GET', 'POST'])
 def turnLeft():
-   client.publish(topic,"04")
-   producer.produce(topic, b"04")
+   ##dependiendo del tipo de comunicacion actual, envio el msj al broker que corresponda
+   if tipo=='mosquitto':
+      client.publish(topic,"04")
+   else:
+      producer.produce(topic, b"04")
    return (''), 204 #con este se mantiene en la misma pag
 
 @app.route("/bend", methods=['GET', 'POST'])
 def bend():
-   client.publish(topic,"05")
-   producer.produce(topic, b"05")
+   ##dependiendo del tipo de comunicacion actual, envio el msj al broker que corresponda
+   if tipo=='mosquitto':
+      client.publish(topic,"05")
+   else:
+      producer.produce(topic, b"05")
    return (''), 204 #con este se mantiene en la misma pag
 
 @app.route("/shakeLeg", methods=['GET', 'POST'])
 def shakeLeg():
-   client.publish(topic,"06")
-   producer.produce(topic, b"06")
+   ##dependiendo del tipo de comunicacion actual, envio el msj al broker que corresponda
+   if tipo=='mosquitto':
+      client.publish(topic,"06")
+   else:
+      producer.produce(topic, b"06")
    return (''), 204 #con este se mantiene en la misma pag
 
 @app.route("/moonwalker", methods=['GET', 'POST'])
 def moonwalker():
-   client.publish(topic,"07")
-   producer.produce(topic, b"07")
+   ##dependiendo del tipo de comunicacion actual, envio el msj al broker que corresponda
+   if tipo=='mosquitto':
+      client.publish(topic,"07")
+   else:
+      producer.produce(topic, b"07")
    return (''), 204 #con este se mantiene en la misma pag
 
 @app.route("/crusaito", methods=['GET', 'POST'])
 def crusaito():
-   client.publish(topic,"08")
-   producer.produce(topic, b"08")
+   ##dependiendo del tipo de comunicacion actual, envio el msj al broker que corresponda
+   if tipo=='mosquitto':
+      client.publish(topic,"08")
+   else:
+      producer.produce(topic, b"08")
    return (''), 204 #con este se mantiene en la misma pag
 
 @app.route("/flapping", methods=['GET', 'POST'])
 def flapping():
-   client.publish(topic,"09")
-   producer.produce(topic, b"09")
+   ##dependiendo del tipo de comunicacion actual, envio el msj al broker que corresponda
+   if tipo=='mosquitto':
+      client.publish(topic,"09")
+   else:
+      producer.produce(topic, b"09")
    return (''), 204 #con este se mantiene en la misma pag
 
 @app.route("/swing", methods=['GET', 'POST'])
 def swing():
-   client.publish(topic,"10")
-   producer.produce(topic, b"10")
+   ##dependiendo del tipo de comunicacion actual, envio el msj al broker que corresponda
+   if tipo=='mosquitto':
+      client.publish(topic,"10")
+   else:
+      producer.produce(topic, b"10")
    return (''), 204 #con este se mantiene en la misma pag
 
 @app.route("/tiptoeSwing", methods=['GET', 'POST'])
 def tiptoeSwing():
-   client.publish(topic,"11")
-   producer.produce(topic, b"11")
+   ##dependiendo del tipo de comunicacion actual, envio el msj al broker que corresponda
+   if tipo=='mosquitto':
+      client.publish(topic,"11")
+   else:
+      producer.produce(topic, b"11")
    return (''), 204 #con este se mantiene en la misma pag
 
 @app.route("/upDown", methods=['GET', 'POST'])
 def upDown():
-   client.publish(topic,"12")
-   producer.produce(topic, b"12")
+   ##dependiendo del tipo de comunicacion actual, envio el msj al broker que corresponda
+   if tipo=='mosquitto':
+      client.publish(topic,"12")
+   else:
+      producer.produce(topic, b"12")
    return (''), 204 #con este se mantiene en la misma pag
 
 @app.route("/happy", methods=['GET', 'POST'])
 def happy():
-   client.publish(topic,"13")
-   producer.produce(topic, b"13")
+   ##dependiendo del tipo de comunicacion actual, envio el msj al broker que corresponda
+   if tipo=='mosquitto':
+      client.publish(topic,"13")
+   else:
+      producer.produce(topic, b"13")
    return (''), 204 #con este se mantiene en la misma pag
 
 @app.route("/sad", methods=['GET', 'POST'])
 def sad():
-   client.publish(topic,"14")
-   producer.produce(topic, b"14")
+   ##dependiendo del tipo de comunicacion actual, envio el msj al broker que corresponda
+   if tipo=='mosquitto':
+      client.publish(topic,"14")
+   else:
+      producer.produce(topic, b"14")
    return (''), 204 #con este se mantiene en la misma pag
 
 @app.route("/victory", methods=['GET', 'POST'])
 def victory():
-   client.publish(topic,"15")
-   producer.produce(topic, b"15")
+   ##dependiendo del tipo de comunicacion actual, envio el msj al broker que corresponda
+   if tipo=='mosquitto':
+      client.publish(topic,"15")
+   else:
+      producer.produce(topic, b"15")
    return (''), 204 #con este se mantiene en la misma pag
 
 @app.route("/sleeping", methods=['GET', 'POST'])
 def sleeping():
-   client.publish(topic,"16")
-   producer.produce(topic, b"16")
+   ##dependiendo del tipo de comunicacion actual, envio el msj al broker que corresponda
+   if tipo=='mosquitto':
+      client.publish(topic,"16")
+   else:
+      producer.produce(topic, b"16")
    return (''), 204 #con este se mantiene en la misma pag
 
 @app.route("/confused", methods=['GET', 'POST'])
 def confused():
-   client.publish(topic,"17")
-   producer.produce(topic, b"17")
+   ##dependiendo del tipo de comunicacion actual, envio el msj al broker que corresponda
+   if tipo=='mosquitto':
+      client.publish(topic,"17")
+   else:
+      producer.produce(topic, b"17")
    return (''), 204 #con este se mantiene en la misma pag
 
 @app.route("/fart", methods=['GET', 'POST'])
 def fart():
-   client.publish(topic,"18")
-   producer.produce(topic, b"18")
+   ##dependiendo del tipo de comunicacion actual, envio el msj al broker que corresponda
+   if tipo=='mosquitto':
+      client.publish(topic,"18")
+   else:
+      producer.produce(topic, b"18")
    return (''), 204 #con este se mantiene en la misma pag
 
 @app.route("/fail", methods=['GET', 'POST'])
 def fail():
-   client.publish(topic,"19")
-   producer.produce(topic, b"19")
+   ##dependiendo del tipo de comunicacion actual, envio el msj al broker que corresponda
+   if tipo=='mosquitto':
+      client.publish(topic,"19")
+   else:
+      producer.produce(topic, b"19")
    return (''), 204 #con este se mantiene en la misma pag
 
 @app.route("/followMode", methods=['GET', 'POST'])
 def followMode():
-   client.publish(topic,"20")
-   producer.produce(topic, b"20")
+   ##dependiendo del tipo de comunicacion actual, envio el msj al broker que corresponda
+   if tipo=='mosquitto':
+      client.publish(topic,"20")
+   else:
+      producer.produce(topic, b"20")
    return (''), 204 #con este se mantiene en la misma pag
 
 @app.route("/retrieveMode", methods=['GET', 'POST'])
 def retrieveMode():
-   client.publish(topic,"21")
-   producer.produce(topic, b"21")
+   ##dependiendo del tipo de comunicacion actual, envio el msj al broker que corresponda
+   if tipo=='mosquitto':
+      client.publish(topic,"21")
+   else:
+      producer.produce(topic, b"21")
    return (''), 204 #con este se mantiene en la misma pag
 
 @app.route("/avoidObstacles", methods=['GET', 'POST'])
 def avoidObstacles():
-   client.publish(topic,"22")
-   producer.produce(topic, b"22")
+   ##dependiendo del tipo de comunicacion actual, envio el msj al broker que corresponda
+   if tipo=='mosquitto':
+      client.publish(topic,"22")
+   else:
+      producer.produce(topic, b"22")
    return (''), 204 #con este se mantiene en la misma pag
 
-@app.route("/dance", methods=["GET", "POST"])
-def dance():
-   client.publish(topic,"dance")
-   # (topic, msg in bytes)
-   producer.produce(topic, b"hola")
-   return (""), 204
-
-
 if __name__ == "__main__":
-   #cliente mqtt setup
+   
+   #cliente mqtt
    client = mqtt.Client()
+   #Setea el nombre de usuario y la contraseña para acceder al broker mosquitto
    client.username_pw_set(os.environ['MQTT_USERNAME'], os.environ['MQTT_PASSWORD'])
+   #define el comportamiento al iniciar la conexion
    client.on_connect = on_connect
+   #inicia la conexion
    client.connect("172.18.0.2")
    client.loop_start()
+   
+   #clave de seguridad
    app.secret_key = 'super secret key'
 
-   #productor kafka setup
+   #productor kafka
    conf = {
-      'bootstrap.servers': os.environ['KAFKA_BROKER'],
-      'session.timeout.ms': 6000,
-      'default.topic.config': {'auto.offset.reset': 'smallest'},
-      'security.protocol': 'SASL_SSL',
-      'sasl.mechanisms': 'SCRAM-SHA-256',
-      'sasl.username': os.environ['KAFKA_USERNAME'],
-      'sasl.password': os.environ['KAFKA_PASSWORD']
-      }
-
+      'bootstrap.servers': '172.18.0.26:9092' ,
+      'security.protocol': 'PLAINTEXT',
+   }
    producer = Producer(**conf)
+
    app.run(host="0.0.0.0", port=5000, debug=True)
