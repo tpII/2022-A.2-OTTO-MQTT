@@ -3,31 +3,35 @@
 #include <ESP8266WiFi.h>
 #include <PubSubClient.h>
 #include <WiFiUdp.h>
+#include "lib_otto.h"
 
 //--------------------------------------
 // configuracion
 //--------------------------------------
 
+#define PIE_DER D4
+#define PIE_IZQ D3
+#define PIERNA_DER D2
+#define PIERNA_IZQ D1
+#define TRIGGER D5 // ultrasonic sensor trigger pin
+#define ECHO D6 // ultrasonic sensor echo pin
+
+Otto otto;
+Otto::function f;
+int intValue=0;
 const char* ssid = "Otto";
 const char* password = "lauchaputo";
-const char* mqtt_server = "163.10.142.9"; 
+const char* mqtt_server = "192.168.0.200"; 
 const uint16_t mqtt_server_port = 1883; 
 const char* mqttUser = "Otto";
 const char* mqttPassword = "DefaultOtto";
-const char* mqttTopicIn = "esp-8266-in";
-const char* mqttTopicOut = "esp-8266-out";
+const char* mqttTopicIn = "otto-in";
+const char* mqttTopicOut = "otto-out";
+
+long ultrasound();
 
 WiFiClient wifiClient;
 PubSubClient mqttClient(wifiClient);
-
-
-//pie derecho - D4
-//pie izquierdo - D3
-//pierna derecha - D2
-//pierna izq - D1
-
-//Sensor trigger - D5
-//Sensor echo - D6
 
 
 //--------------------------------------
@@ -64,8 +68,17 @@ void callback(char* topic, byte* payload, unsigned int length) {
     Serial.print((char)payload[i]);
   }
   Serial.println();
-
-  mqttClient.publish(mqttTopicOut,("ESP8266: Cedalo Mosquitto is awesome. ESP8266-Time: "));
+  if (length >= 2) {
+    //Cast payload to an int pointer and fetch the value
+    //intValue = *((int*)payload); 
+    //intValue= atoi((char)payload[0]);
+    payload[length] = '\0'; // Make payload a string by NULL terminating it.
+    intValue = atoi((char *)payload);
+    Serial.print(intValue);
+  }
+  f = otto.Otto::doActionsArray [intValue];
+  
+  (otto.*f) ();
 }
 
 //--------------------------------------
@@ -87,10 +100,6 @@ void connect() {
     }
   }
 }
-Servo foot_right;
-Servo foot_left;
-Servo leg_right;
-Servo leg_left;
 
 void setup() {
   Serial.begin(9600);
@@ -98,11 +107,10 @@ void setup() {
   setup_wifi();
   mqttClient.setServer(mqtt_server, mqtt_server_port);
   mqttClient.setCallback(callback);
+  otto.init(PIERNA_IZQ, PIERNA_DER, PIE_IZQ,PIE_DER,TRIGGER,ECHO);
+  otto.home();
+  delay(500);
 
-  foot_right.attach(D4,500,2400);
-  foot_left.attach(D3,500,2400);
-  leg_right.attach(D2,500,2400);
-  leg_left.attach(D1,500,2400);
 }
 
 void loop(){
@@ -113,6 +121,9 @@ void loop(){
  
   mqttClient.loop();
 
-  leg_right.write(90);
+  if (intValue >= 20){
+    (otto.*f) ();
+  }
+
   
 }
