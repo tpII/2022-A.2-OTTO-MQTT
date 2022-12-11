@@ -13,29 +13,26 @@
 #define MEDIUM      15
 #define BIG         30
 
-// -- Servo delta limit default. degree / sec
-#define SERVO_LIMIT_DEFAULT 240
 
 class Otto
 {
   public:
 
-    //-- Otto initialization
+    //Inicializacion Otto
     void init(int pierna_izq, int pierna_der, int pie_der, int pie_izq,int tr, int ec);
-    //-- Attach & detach functions
     void attachServos();
     void detachServos();
 
-    //-- Predetermined Motion Functions
+    // Funciones de movimientos
     void moveServos(int time, int  servo_target[]);
     void oscillateServos(int A[4], int O[4], int T, double phase_diff[4]);
 
-    //-- HOME = Otto at rest position
-    void home();
+ 
+    void home(); //Posicion de descanso
     bool getRestState(){return isOttoResting;};
     void setRestState(bool state){isOttoResting=state;};
 
-
+    // Todos los movimientos del otto
     void walkForward();
     void walkBackward();
     void turnRight();
@@ -65,6 +62,7 @@ class Otto
     void followMode();
     void retrieve();
     
+    // Vector de los movimientos
     typedef void (Otto::*function) ();
     function doActionsArray [23]={
       &Otto::home,
@@ -103,7 +101,7 @@ class Otto
     float increment[4];
 
     bool isOttoResting;
-    long ultrasound();
+    long ultrasound(); 
     void execute(int A[4], int O[4], int T, double phase_diff[4], float steps);
 
 };

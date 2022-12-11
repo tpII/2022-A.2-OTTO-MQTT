@@ -11,7 +11,7 @@ topic = 'otto'
 tipo = 'mosquitto' ##variable para saber con cual tipo de comunicacion estoy
 
 def on_connect(client, userdata, flags, rc):
-    client.publish(topic, "Cliente conectado. -Flask")
+    client.publish('debug', "Flask conectado!")
 
 @app.route("/")
 def home():
@@ -255,13 +255,9 @@ if __name__ == "__main__":
 
    #productor kafka setup
    conf = {
-      'bootstrap.servers': os.environ['KAFKA_BROKER'],
-      'session.timeout.ms': 6000,
+      'bootstrap.servers': '172.18.0.26:9092' ,
       'default.topic.config': {'auto.offset.reset': 'smallest'},
-      'security.protocol': 'SASL_SSL',
-      'sasl.mechanisms': 'SCRAM-SHA-256',
-      'sasl.username': os.environ['KAFKA_USERNAME'],
-      'sasl.password': os.environ['KAFKA_PASSWORD']
+      'security.protocol': 'PLAINTEXT',
       }
 
    producer = Producer(**conf)
