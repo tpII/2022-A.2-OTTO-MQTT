@@ -1,12 +1,10 @@
 from flask import Flask, render_template, flash
-from redis import Redis
 import os
 import paho.mqtt.client as mqtt
 from confluent_kafka import Producer
 
 app = Flask(__name__)
 app.config["TEMPLATES_AUTO_RELOAD"] = True
-redis = Redis(host="redis",port=6379)
 topic = 'otto'
 
 def on_connect(client, userdata, flags, rc):
@@ -179,20 +177,25 @@ def dance():
 
 
 if __name__ == "__main__":
-   #cliente mqtt setup
+   
+   #cliente mqtt
    client = mqtt.Client()
+   #Setea el nombre de usuario y la contraseña para acceder al broker mosquitto
    client.username_pw_set(os.environ['MQTT_USERNAME'], os.environ['MQTT_PASSWORD'])
+   #define el comportamiento al iniciar la conexion
    client.on_connect = on_connect
+   #inicia la conexion
    client.connect("172.18.0.2")
    client.loop_start()
+   
+   #clave de seguridad
    app.secret_key = 'super secret key'
 
-   #productor kafka setup
+   #productor kafka
    conf = {
       'bootstrap.servers': '172.18.0.26:9092' ,
-      'default.topic.config': {'auto.offset.reset': 'smallest'},
       'security.protocol': 'PLAINTEXT',
-      }
-
+   }
    producer = Producer(**conf)
+
    app.run(host="0.0.0.0", port=5000, debug=True)
