@@ -646,3 +646,16 @@
 1670714923: Client auto-9F28ABA8-5D96-7326-6692-606D2F0357DB closed its connection.
 1670714960: mosquitto version 2.0.15 terminating
 1670714960: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1670714973: mosquitto version 2.0.15 starting
+1670714973: Config loaded from /mosquitto/config/mosquitto.conf.
+1670714973: Opening ipv4 listen socket on port 1883.
+1670714973: mosquitto version 2.0.15 running
+1670715008: New connection from 172.18.0.24:39965 on port 1883.
+1670715008: New client connected from 172.18.0.24:39965 as auto-B706A83B-6C53-696B-626B-494E86A441D8 (p2, c1, k60, u'Flask').
+1670715008: New connection from 172.18.0.24:42785 on port 1883.
+1670715008: New client connected from 172.18.0.24:42785 as auto-BB394719-7D70-D54D-5694-5E1C76BB0D37 (p2, c1, k60, u'Flask').
+1670715045: Client auto-BB394719-7D70-D54D-5694-5E1C76BB0D37 closed its connection.
+1670715046: New connection from 172.18.0.24:34801 on port 1883.
+1670715046: New client connected from 172.18.0.24:34801 as auto-65FAA763-69C9-916A-90B0-663692FC4762 (p2, c1, k60, u'Flask').
+1670715076: New connection from 127.0.0.1:48998 on port 1883.
+1670715076: New client connected from 127.0.0.1:48998 as auto-AFB24EB3-EA74-B465-EBD3-550FCFEC5E7D (p2, c1, k60, u'Otto').
