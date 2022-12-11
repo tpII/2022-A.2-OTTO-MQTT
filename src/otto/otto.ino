@@ -92,7 +92,6 @@ Servo foot_left;
 Servo leg_right;
 Servo leg_left;
 
-int i = 1500;
 void setup() {
   Serial.begin(9600);
 
@@ -115,8 +114,5 @@ void loop(){
   mqttClient.loop();
 
   leg_right.write(90);
-  leg_left.write(90);
-  foot_right.write(90);
-  foot_left.write(90);
   
 }
