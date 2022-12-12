@@ -10,9 +10,9 @@
 
 
 
-const char* ssid = "Otto";             // Parametros del AP
-const char* password = "12345678";     // 
-const char* mqtt_server = "192.168.0.200"; //Parametros del broker MQTT
+const char* ssid = "Casa 42 2.4GHz";             // Parametros del AP
+const char* password = "lautaro141099";     // 
+const char* mqtt_server = "192.168.0.23"; //Parametros del broker MQTT
 const uint16_t mqtt_server_port = 1883;    //
 const char* mqttUser = "Otto";             //
 const char* mqttPassword = "DefaultOtto";  //
