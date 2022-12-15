@@ -19,7 +19,7 @@ if __name__ == '__main__':
         'security.protocol': 'PLAINTEXT',
         'session.timeout.ms': 6000,
         'group.id': 'grupo',
-        'auto.offset.reset': 'earliest',
+        'auto.offset.reset': 'latest',
         'enable.auto.offset.store': False
         }
     c = Consumer(**conf)
