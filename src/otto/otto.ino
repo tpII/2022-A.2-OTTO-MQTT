@@ -19,9 +19,9 @@
 Otto otto;
 Otto::function f;
 int intValue=0;
-const char* ssid = "Otto";             // Parametros del AP
-const char* password = "12345678";     // 
-const char* mqtt_server = "192.168.0.200"; //Parametros del broker MQTT
+const char* ssid = "alumnosInfo";             // Parametros del AP
+const char* password = "Informatica2019";     // 
+const char* mqtt_server = "163.10.143.54"; //Parametros del broker MQTT
 const uint16_t mqtt_server_port = 1883;    //
 const char* mqttUser = "Otto";             //
 const char* mqttPassword = "DefaultOtto";  //

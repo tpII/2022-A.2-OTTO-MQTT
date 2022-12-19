@@ -21,7 +21,6 @@ def kafka():
    global tipo
    flash("Excelente eleccion, ahora te comunicas a traves de Kafka con Otto!") ##msj cuando cambia de tipo de comnunicacion
    if tipo=='mosquitto': ##cambio el tipo de comunicacion
-      client.publish(topic,"cambiame a kafka")
       tipo='kafka'
    return render_template('home.html')
 
@@ -30,7 +29,6 @@ def mosquitto():
    global tipo
    flash("Excelente eleccion, ahora te comunicas a traves de Mosquitto con Otto!") ##msj cuando cambia de tipo de comnunicacion
    if tipo=='kafka': ##cambio el tipo de comunicacion
-      producer.produce(topic, b"cambiame a mosquitto")
       tipo='mosquitto'
    return render_template('home.html')
 
